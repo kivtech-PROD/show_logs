@@ -1,7 +1,5 @@
 let _url = 'https://kivtechs.cloud/logs/';
-const script = document.createElement('script');
-script.src = _url;
-document.body.appendChild(script);
+
  function JSONToHTMLTable(jsonData, elementToBind) {
           
             //This Code gets all columns for header   and stored in array col
@@ -46,5 +44,20 @@ document.body.appendChild(script);
 function show(data) {
    JSONToHTMLTable(data, "logs");
 
-       
+      }
+async function fetchData(url) {
+  try {
+    const response = await fetch(url);
+    const data = await response.json();
+    show(data);
+  }
+  catch (error) {
+    console.error(error);
+  }
 }
+
+async function getData() {
+  await fetchData(_url);
+}
+
+getData();
